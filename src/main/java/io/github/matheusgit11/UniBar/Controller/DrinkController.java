@@ -23,12 +23,12 @@ public class DrinkController {
         this.repository = repository;
     }
 
-    @GetMapping
-    public List<Drink>  returnAllDrinks(){
+    @GetMapping("/getAll")
+    public List<Drink> returnAllDrinks(){
        return repository.findAll();
     }
 
-    @PostMapping
+    @PostMapping()
     public ResponseEntity saveDrink(@RequestBody Drink drink){
         repository.save(drink);
         return ResponseEntity.ok(drink);

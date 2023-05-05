@@ -17,10 +17,9 @@ public class Drink {
     private String description;
     @Column
     private String name;
+
     @Column
-    private List<String> ingredientes;
-    @Column
-    private String modoDePreparo;
+    private String imageLink;
     @Column
     private Double graduacaoAlcoolica;
 
@@ -28,26 +27,12 @@ public class Drink {
 
     }
 
-    public Drink(String description, String name, List<String> ingredientes, String modoDePreparo, Double graduacaoAlcoolica) {
+    public Drink(String description, String name, Double graduacaoAlcoolica , String imageLink) {
         this.description = description;
         this.name = name;
-        this.ingredientes = ingredientes;
-        this.modoDePreparo = modoDePreparo;
         this.graduacaoAlcoolica = graduacaoAlcoolica;
+        this.imageLink = imageLink;
     }
-
-    @Override
-    public String toString() {
-        return "Drink{" +
-                "id=" + id +
-                ", description='" + description + '\'' +
-                ", name='" + name + '\'' +
-                ", ingredientes=" + ingredientes +
-                ", modoDePreparo='" + modoDePreparo + '\'' +
-                ", graduacaoAlcoolica=" + graduacaoAlcoolica +
-                '}';
-    }
-
 
     public Integer getId() {
         return id;
@@ -73,20 +58,13 @@ public class Drink {
         this.name = name;
     }
 
-    public List<String> getIngredientes() {
-        return ingredientes;
+
+    public String getImageLink() {
+        return imageLink;
     }
 
-    public void setIngredientes(List<String> ingredientes) {
-        this.ingredientes = ingredientes;
-    }
-
-    public String getModoDePreparo() {
-        return modoDePreparo;
-    }
-
-    public void setModoDePreparo(String modoDePreparo) {
-        this.modoDePreparo = modoDePreparo;
+    public void setImageLink(String imageLink) {
+        this.imageLink = imageLink;
     }
 
     public Double getGraduacaoAlcoolica() {
